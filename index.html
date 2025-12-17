@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO -->
+    <title>Stock Ideas by Shivam | Best Crypto, Forex & Indian Market Signals</title>
+    <meta name="description"
+        content="Join India's #1 Premium Trading Community. Get high-accuracy signals for BankNifty, Nifty50, Crypto (BTC/ETH), and Gold (XAU). Recover losses and maximize profits with Stock Ideas by Shivam.">
+    <meta name="keywords"
+        content="Stock Ideas by Shivam, BankNifty Signals, Crypto Trading, Forex Signals, Intraday Trading Tips, Nifty50 Option Buying, Indian Stock Market, Trading Calls Telegram">
+    <meta name="author" content="Stock Ideas by Shivam">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://stockideasbyshivam.com/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stockideasbyshivam.com/">
+    <meta property="og:title" content="Stock Ideas by Shivam | Premium Trading Signals">
+    <meta property="og:description"
+        content="🚀 50k+ Traders Trust Us. 92% Accuracy. Join the best community for Intraday, Crypto & Forex signals. Start earning today!">
+    <meta property="og:image" content="https://stockideasbyshivam.com/social-preview.jpg"> <!-- Placeholder -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://stockideasbyshivam.com/">
+    <meta property="twitter:title" content="Stock Ideas by Shivam | Premium Trading Signals">
+    <meta property="twitter:description"
+        content="🚀 50k+ Traders Trust Us. 92% Accuracy. Join the best community for Intraday, Crypto & Forex signals. Start earning today!">
+    <meta property="twitter:image" content="https://stockideasbyshivam.com/social-preview.jpg">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0c0e12">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Stock Ideas by Shivam - Premium Trading Signals",
+      "description": "High-accuracy trading signals for Crypto, Forex, and Indian Markets. Specialized in Intraday and Option Buying strategies.",
+      "provider": {
+        "@type": "Person",
+        "name": "Shivam",
+        "additionalName": "Stock Ideas"
+      },
+      "url": "https://stockideasbyshivam.com",
+      "areaServed": "Global",
+      "potentialAction": {
+        "@type": "JoinAction",
+        "target": "https://t.me/stockideasbyshivam"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250"
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "Premium Trading Group Access",
+        "availability": "https://schema.org/LimitedAvailability"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            /* Trading Terminal Palette */
+            --bg-dark: #0c0e12;
+            --bg-panel: #151920;
+            --grid-line: rgba(255, 255, 255, 0.04);
+
+            /* Market Colors */
+            --bullish-green: #00F59B;
+            --bullish-gradient: linear-gradient(135deg, #00F59B, #00D084);
+
+            --bearish-red: #FF3333;
+            --bearish-gradient: linear-gradient(135deg, #FF3333, #D92027);
+
+            --accent-blue: #2962FF;
+            /* TradingView Blue */
+
+            /* Technical Glass */
+            --glass-bg: rgba(21, 25, 32, 0.65);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.12);
+
+            --text-main: #ffffff;
+            --text-muted: #8b949e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Chart Grid Background */
+        .chart-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Ambient Glow (replacing Orbs with Market Glows) */
+        .market-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.25;
+            animation: pulse-glow 8s infinite alternate;
+        }
+
+        .glow-green {
+            top: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: var(--bullish-green);
+        }
+
+        .glow-red {
+            bottom: -10%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: var(--bearish-red);
+            animation-delay: -4s;
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                opacity: 0.2;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 0.3;
+                transform: scale(1.1);
+            }
+        }
+
+        /* Floating Candlesticks */
+        .candlestick {
+            position: fixed;
+            width: 6px;
+            background: var(--bullish-green);
+            border-radius: 2px;
+            opacity: 0.15;
+            z-index: -1;
+            animation: float-candle 10s infinite linear;
+        }
+
+        .candlestick::before,
+        .candlestick::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            background: inherit;
+        }
+
+        .candlestick::before {
+            top: -15px;
+            height: 15px;
+        }
+
+        .candlestick::after {
+            bottom: -15px;
+            height: 15px;
+        }
+
+        .candle-1 {
+            height: 60px;
+            left: 10%;
+            bottom: -100px;
+            animation-duration: 12s;
+        }
+
+        .candle-2 {
+            height: 40px;
+            left: 25%;
+            bottom: -100px;
+            animation-delay: 2s;
+            background: var(--bearish-red);
+        }
+
+        .candle-3 {
+            height: 80px;
+            left: 80%;
+            bottom: -100px;
+            animation-duration: 15s;
+            animation-delay: 1s;
+        }
+
+        .candle-4 {
+            height: 50px;
+            left: 90%;
+            bottom: -100px;
+            animation-duration: 9s;
+            animation-delay: 4s;
+            background: var(--bearish-red);
+        }
+
+        @keyframes float-candle {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.2;
+            }
+
+            90% {
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 1.5rem;
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Trading Panel Card */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border: 1px solid var(--glass-border);
+            border-top: 1px solid var(--glass-highlight);
+            border-radius: 24px;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            box-shadow:
+                0 20px 50px -10px rgba(0, 0, 0, 0.5),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .channel-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #1e222d, #13161f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 800;
+            position: relative;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 2;
+        }
+
+        .channel-avatar::after {
+            content: 'S';
+            background: var(--bullish-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Chart Icon overlaid on avatar */
+        .channel-avatar::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 17L9 11L13 15L21 7' stroke='rgba(255,255,255,0.05)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.5;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            width: 32px;
+            height: 32px;
+            background: var(--bullish-gradient);
+            border-radius: 50%;
+            border: 4px solid var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0c0e12;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.02em;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.5px;
+        }
+
+        .tags {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.8rem;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--bullish-green);
+            color: var(--bullish-green);
+        }
+
+        .tag.crypto {
+            color: var(--accent-blue);
+        }
+
+        .tag.forex {
+            color: var(--bullish-green);
+        }
+
+        .tag.indian {
+            color: #FFA500;
+        }
+
+        .offer-box {
+            position: relative;
+            background: rgba(255, 51, 51, 0.05);
+            border: 1px solid rgba(255, 51, 51, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            overflow: hidden;
+        }
+
+        /* Ticker scan line */
+        .offer-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--bearish-red), transparent);
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .offer-title {
+            color: var(--bearish-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .countdown {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--bearish-red);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(255, 51, 51, 0.2);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto 2.5rem auto;
+            padding: 1.2rem 2rem;
+            background: var(--bullish-gradient);
+            color: #0c0e12;
+            /* Dark text for contrast on green */
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 40px rgba(0, 245, 155, 0.3);
+            z-index: 5;
+            animation: heartbeat 3s infinite;
+        }
+
+        .cta-button:hover {
+            animation: none;
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 245, 155, 0.5);
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(0, 245, 155, 0);
+            }
+
+            15% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(0, 245, 155, 0.4);
+            }
+
+            30% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(0, 245, 155, 0);
+            }
+
+            45% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(0, 245, 155, 0.4);
+            }
+
+            60% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(0, 245, 155, 0);
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 12px;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            transition: 0.3s;
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.2rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value.green {
+            color: var(--bullish-green);
+            text-shadow: 0 0 10px rgba(0, 245, 155, 0.2);
+        }
+
+        .stat-value.gold {
+            color: #FFD700;
+        }
+
+        /* SCROLL DOWN INDICATOR */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            opacity: 0.6;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* SECTION STYLES */
+        .content-section {
+            width: 100%;
+            max-width: 900px;
+            padding: 3rem 1.5rem 6rem 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            color: #fff;
+            position: relative;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .review-card {
+            background: var(--bg-panel);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--bullish-green);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #2a2e39;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .review-text {
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .profit-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            background: rgba(0, 245, 155, 0.1);
+            color: var(--bullish-green);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 245, 155, 0.2);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* TOAST NOTIFICATION STYLES */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .social-toast {
+            background: rgba(21, 25, 32, 0.9);
+            border: 1px solid var(--glass-border);
+            border-left: 3px solid var(--bullish-green);
+            padding: 12px 18px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-size: 0.85rem;
+            transform: translateX(-150%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+            opacity: 0;
+            max-width: 320px;
+            pointer-events: auto;
+        }
+
+        .social-toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(0, 245, 155, 0.1);
+            color: var(--bullish-green);
+            flex-shrink: 0;
+        }
+
+        .toast-title {
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .toast-meta {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .glass-card {
+                padding: 2rem 1.2rem;
+            }
+
+            .countdown {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chart-grid"></div>
+    <div class="market-glow glow-green"></div>
+    <div class="market-glow glow-red"></div>
+
+    <!-- Floating Candlesticks -->
+    <div class="candlestick candle-1"></div>
+    <div class="candlestick candle-2"></div>
+    <div class="candlestick candle-3"></div>
+    <div class="candlestick candle-4"></div>
+
+    <main class="container">
+        <article class="glass-card">
+
+            <header class="profile-section">
+                <div class="channel-avatar">
+                    <div class="verified-badge" aria-label="Verified Account">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <h1>Stock Ideas</h1>
+                <p class="subtitle">@stockideasbyshivam</p>
+
+                <div class="tags">
+                    <span class="tag crypto">BTC/USD</span>
+                    <span class="tag forex">XAU/USD</span>
+                    <span class="tag indian">NIFTY50</span>
+                </div>
+            </header>
+
+            <div class="offer-box">
+                <div class="offer-title">
+                    ⚠ Market Volatility Alert
+                </div>
+                <!-- Countdown -->
+                <div class="countdown" id="timer">14:59</div>
+                <div class="countdown-label">Premium Access Closing</div>
+            </div>
+
+            <a href="https://t.me/stockideasbyshivam" target="_blank" class="cta-button"
+                aria-label="Join Stock Ideas Telegram Channel Now">
+                Join Channel Now
+                <svg style="margin-left: 12px; width: 24px; height: 24px;" fill="none" stroke="currentColor"
+                    stroke-width="2.5" viewBox="0 0 24 24">
+                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+
+            <p style="margin-bottom: 2rem; color: #a1a1aa; line-height: 1.6; font-size: 1rem; padding: 0 5px;">
+                Get <strong style="color: #fff; font-family: 'JetBrains Mono', monospace;">institution-grade</strong>
+                signals,
+                chart analysis, and entry/exit points for heavy profit booking.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value gold">50,420</div>
+                    <div class="stat-label">Active Traders</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value green">92.4%</div>
+                    <div class="stat-label">Win Rate</div>
+                </div>
+            </div>
+        </article>
+
+        <div class="scroll-indicator" onclick="document.getElementById('reviews').scrollIntoView()"
+            aria-label="Scroll to reviews">
+            <span>View Performance</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+            </svg>
+        </div>
+    </main>
+
+    <!-- New Testimonials & Details Section -->
+    <section class="content-section" id="reviews">
+        <h2 class="section-title">Trader Verification</h2>
+
+        <div class="testimonials-grid">
+            <!-- Review 1 -->
+            <article class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">RK</div>
+                    <div class="review-info">
+                        <h4 style="color: #fff; font-size: 1rem;">Rohan K.</h4>
+                    </div>
+                </div>
+                <p class="review-text">"Recovered ₹50k losses in one week. The levels given for BankNifty are precise to
+                    the point."</p>
+                <div class="profit-badge">▲ ₹50,000 PnL</div>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">SJ</div>
+                    <div class="review-info">
+                        <h4 style="color: #fff; font-size: 1rem;">Sarah J.</h4>
+                    </div>
+                </div>
+                <p class="review-text">"Capital doubled in 10 days. The risk management advice is what makes this
+                    channel different."</p>
+                <div class="profit-badge">▲ 100% ROI</div>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">VS</div>
+                    <div class="review-info">
+                        <h4 style="color: #fff; font-size: 1rem;">Vikram S.</h4>
+                    </div>
+                </div>
+                <p class="review-text">"Best for Intraday. No over-trading, just 2-3 sure shot calls a day."</p>
+            </article>
+
+            <!-- Review 4 -->
+            <article class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">AM</div>
+                    <div class="review-info">
+                        <h4 style="color: #fff; font-size: 1rem;">Arjun M.</h4>
+                    </div>
+                </div>
+                <p class="review-text">"Joined yesterday. Already booked profit in Gold scalping. Fast execution
+                    signals."</p>
+                <div class="profit-badge">▲ +15% Today</div>
+            </article>
+        </div>
+
+        <div style="text-align: center;">
+            <p
+                style="color: #94a3b8; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+                STRATEGY CLOSING IN <span style="color: var(--bearish-red);">15:00 MINS</span>
+            </p>
+            <a href="https://t.me/stockideasbyshivam" target="_blank" class="cta-button"
+                style="background: var(--bearish-gradient); color: white;" aria-label="Get Access to Premium Group Now">
+                Get Access Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        /* =========================================
+           COUNTDOWN TIMER LOGIC
+           ========================================= */
+        let timeLeft = 15 * 60; // 15 minutes in seconds
+
+        const timerDisplay = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+
+            // Add leading zeros
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            timerDisplay.textContent = `${minutes}:${seconds}`;
+
+            if (timeLeft === 0) {
+                // When timer hits zero, maybe reset or stay at 00:00
+                timeLeft = 15 * 60; // Loop it for demo purposes, or handle expire logic
+            } else {
+                timeLeft--;
+            }
+        }
+
+        // Initialize timer
+        updateTimer();
+        setInterval(updateTimer, 1000);
+
+
+        /* =========================================
+           SOCIAL PROOF TOAST LOGIC
+           ========================================= */
+
+        // List of Names (75 Indian, 25 Foreign approx)
+        const names = [
+            // Indian Names (Male & Female)
+            "Aarav", "Vihaan", "Aditya", "Arjun", "Sai", "Reyansh", "Aryan", "Krishna", "Ishaan", "Shaurya",
+            "Vivaan", "Dhruv", "Kabir", "Ritvik", "Rohan", "Viraj", "Ananya", "Diya", "Saanvi", "Kiara",
+            "Myra", "Pari", "Aditi", "Aadhya", "Prisha", "Riya", "Anika", "Shruti", "Sarthak", "Vikram",
+            "Rahul", "Amit", "Suresh", "Priya", "Neha", "Pooja", "Anjali", "Divya", "Sneha", "Manish",
+            "Deepak", "Sanjay", "Sandeep", "Rajesh", "Vivek", "Alok", "Tarun", "Karthik", "Varun", "Nikhil",
+            "Gaurav", "Ashish", "Abhishek", "Priyanka", "Meera", "Nithya", "Varsha", "Tanvi", "Kavya", "Isha",
+            "Ritu", "Anita", "Sunita", "Suman", "Rekha", "Rani", "Nisha", "Kiran", "Seema", "Geeta",
+            "Rita", "Mala", "Usha", "Shweta", "Mohit", "Yash", "Pranav", "Tanishq", "Rakesh", "Vinod",
+
+            // Foreign Names
+            "Liam", "Noah", "Oliver", "Elijah", "James", "William", "Benjamin", "Lucas", "Henry", "Theodore",
+            "Emma", "Olivia", "Ava", "Charlotte", "Sophia", "Amelia", "Mia", "Harper", "Evelyn", "Abigail",
+            "Michael", "David", "John", "Sarah", "Emily"
+        ];
+
+        const toastContainer = document.getElementById('toastContainer');
+
+        // Helper to get random item
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        // Helper to get random time ago
+        function getRandomTime() {
+            const times = [
+                "just now",
+                "1 min ago", "2 mins ago", "just now", "5 mins ago",
+                "3 mins ago", "just now", "10s ago", "30s ago",
+                "2 mins ago", "just joined"
+            ];
+            return getRandomItem(times);
+        }
+
+        function showToast() {
+            const name = getRandomItem(names);
+            const time = getRandomTime();
+
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = 'social-toast';
+
+            toast.innerHTML = `
+                <div class="toast-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="20" x2="12" y2="10"></line>
+                        <line x1="18" y1="20" x2="18" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                </div>
+                <div class="toast-content">
+                    <div class="toast-title"><span class="toast-name">${name}</span> joined</div>
+                    <div class="toast-meta">${time} • Premium Plan</div>
+                </div>
+            `;
+
+            toastContainer.appendChild(toast);
+
+            // Trigger animation
+            requestAnimationFrame(() => {
+                toast.classList.add('show');
+            });
+
+            // Remove after 4-5 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => {
+                    toast.remove();
+                }, 600); // Wait for transition out
+            }, 4500);
+
+            // Schedule next toast (random 2-6 seconds)
+            const nextDelay = Math.random() * 4000 + 2000;
+            setTimeout(showToast, nextDelay);
+        }
+
+        // Start the loop after a short delay
+        setTimeout(showToast, 1500);
+
+    </script>
+</body>
+
+</html>
