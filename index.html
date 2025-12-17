@@ -255,7 +255,7 @@
 
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 600px;
             padding: 1.5rem;
             position: relative;
             z-index: 10;
@@ -263,6 +263,13 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
         }
 
         /* Trading Panel Card */
@@ -273,14 +280,21 @@
             border: 1px solid var(--glass-border);
             border-top: 1px solid var(--glass-highlight);
             border-radius: 24px;
-            padding: 3rem 1.5rem;
+            padding: 2rem;
             text-align: center;
             box-shadow:
                 0 20px 50px -10px rgba(0, 0, 0, 0.5),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.03);
             position: relative;
             overflow: hidden;
-            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .highlight-card {
+            border-color: rgba(255, 51, 51, 0.3);
+            background: rgba(20, 10, 10, 0.6);
         }
 
         .profile-section {
@@ -288,9 +302,10 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
-            margin-bottom: 2rem;
             text-align: left;
             gap: 1.5rem;
+            margin-bottom: 0;
+            width: 100%;
         }
 
         .channel-avatar {
@@ -409,7 +424,9 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin-bottom: 2.5rem;
+            gap: 12px;
+            margin-bottom: 0;
+            width: 100%;
             width: 100%;
             max-width: 500px;
         }
@@ -442,7 +459,7 @@
             border: 1px solid rgba(255, 51, 51, 0.2);
             border-radius: 16px;
             padding: 1.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
             overflow: hidden;
         }
 
@@ -783,6 +800,25 @@
                 font-size: 3rem;
             }
         }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 900px;
+            }
+
+            .cards-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+
+            .glass-card:nth-child(1),
+            /* Profile Card */
+            .glass-card:nth-child(4) {
+                /* Stats Card */
+                grid-column: 1 / -1;
+            }
+        }
     </style>
 </head>
 
@@ -799,79 +835,91 @@
     <div class="candlestick candle-4"></div>
 
     <main class="container">
-        <article class="glass-card">
+        <div class="cards-container">
+            <!-- 1. Profile / Header Card -->
+            <article class="glass-card">
+                <header class="profile-section">
+                    <div class="channel-avatar">
+                        <div class="verified-badge" aria-label="Verified Account">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="header-content">
+                        <h1>Stock Ideas</h1>
+                        <p class="subtitle">@stockideasbyshivam</p>
 
-            <header class="profile-section">
-                <div class="channel-avatar">
-                    <div class="verified-badge" aria-label="Verified Account">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
+                        <div class="tags">
+                            <span class="tag crypto">BTC/USD</span>
+                            <span class="tag forex">XAU/USD</span>
+                            <span class="tag indian">NIFTY50</span>
+                        </div>
+                    </div>
+                </header>
+            </article>
+
+            <!-- 2. Pain Points Card -->
+            <article class="glass-card">
+                <div class="pain-points">
+                    <div class="pain-item">
+                        <span class="pain-icon">✕</span>
+                        <span>Market hits your <strong>Stop Loss</strong> first, then Target?</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">✕</span>
+                        <span>Is your <strong>Trailing SL</strong> always incorrect?</span>
+                    </div>
+                    <div class="pain-item">
+                        <span class="pain-icon">✕</span>
+                        <span>Tired of getting trapped in <strong>Fake Breakouts</strong>?</span>
                     </div>
                 </div>
-                <div class="header-content">
-                    <h1>Stock Ideas</h1>
-                    <p class="subtitle">@stockideasbyshivam</p>
+            </article>
 
-                    <div class="tags">
-                        <span class="tag crypto">BTC/USD</span>
-                        <span class="tag forex">XAU/USD</span>
-                        <span class="tag indian">NIFTY50</span>
+            <!-- 3. Offer Card -->
+            <article class="glass-card highlight-card">
+                <div class="offer-box">
+                    <div class="offer-title">
+                        ⚠ Market Volatility Alert
+                    </div>
+                    <!-- Countdown -->
+                    <div class="countdown js-timer">14:59</div>
+                    <div class="countdown-label">Premium Access Closing</div>
+                </div>
+
+                <a href="https://t.me/stockideasbyshivam" target="_blank" class="cta-button"
+                    aria-label="Join Stock Ideas Telegram Channel Now">
+                    Join Channel Now
+                    <svg style="margin-left: 12px; width: 24px; height: 24px;" fill="none" stroke="currentColor"
+                        stroke-width="2.5" viewBox="0 0 24 24">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+
+                <p
+                    style="margin-bottom: 0; color: #a1a1aa; line-height: 1.6; font-size: 0.95rem; padding: 0 5px; text-align: center;">
+                    Get <strong
+                        style="color: #fff; font-family: 'JetBrains Mono', monospace;">institution-grade</strong>
+                    signals and chart analysis.
+                </p>
+            </article>
+
+            <!-- 4. Stats Card -->
+            <article class="glass-card">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value gold">50,420</div>
+                        <div class="stat-label">Active Traders</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value green">92.4%</div>
+                        <div class="stat-label">Win Rate</div>
                     </div>
                 </div>
-            </header>
-
-            <div class="pain-points">
-                <div class="pain-item">
-                    <span class="pain-icon">✕</span>
-                    <span>Market hits your <strong>Stop Loss</strong> first, then Target?</span>
-                </div>
-                <div class="pain-item">
-                    <span class="pain-icon">✕</span>
-                    <span>Is your <strong>Trailing SL</strong> always incorrect?</span>
-                </div>
-                <div class="pain-item">
-                    <span class="pain-icon">✕</span>
-                    <span>Tired of getting trapped in <strong>Fake Breakouts</strong>?</span>
-                </div>
-            </div>
-
-            <div class="offer-box">
-                <div class="offer-title">
-                    ⚠ Market Volatility Alert
-                </div>
-                <!-- Countdown -->
-                <div class="countdown js-timer">14:59</div>
-                <div class="countdown-label">Premium Access Closing</div>
-            </div>
-
-            <a href="https://t.me/stockideasbyshivam" target="_blank" class="cta-button"
-                aria-label="Join Stock Ideas Telegram Channel Now">
-                Join Channel Now
-                <svg style="margin-left: 12px; width: 24px; height: 24px;" fill="none" stroke="currentColor"
-                    stroke-width="2.5" viewBox="0 0 24 24">
-                    <path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </a>
-
-            <p style="margin-bottom: 2rem; color: #a1a1aa; line-height: 1.6; font-size: 1rem; padding: 0 5px;">
-                Get <strong style="color: #fff; font-family: 'JetBrains Mono', monospace;">institution-grade</strong>
-                signals,
-                chart analysis, and entry/exit points for heavy profit booking.
-            </p>
-
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-value gold">50,420</div>
-                    <div class="stat-label">Active Traders</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value green">92.4%</div>
-                    <div class="stat-label">Win Rate</div>
-                </div>
-            </div>
-        </article>
+            </article>
+        </div>
 
         <div class="scroll-indicator" onclick="document.getElementById('reviews').scrollIntoView()"
             aria-label="Scroll to reviews">
