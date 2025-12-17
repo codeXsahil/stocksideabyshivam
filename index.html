@@ -285,9 +285,12 @@
 
         .profile-section {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
+            justify-content: flex-start;
             margin-bottom: 2rem;
+            text-align: left;
+            gap: 1.5rem;
         }
 
         .channel-avatar {
@@ -301,7 +304,7 @@
             font-size: 4rem;
             font-weight: 800;
             position: relative;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.05);
             z-index: 2;
@@ -310,6 +313,7 @@
         .channel-avatar::after {
             content: 'S';
             background: var(--bullish-gradient);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -354,17 +358,22 @@
         .subtitle {
             font-size: 1.1rem;
             color: var(--text-muted);
-            margin-bottom: 1.8rem;
+            margin-bottom: 0.8rem;
             font-family: 'JetBrains Mono', monospace;
             letter-spacing: -0.5px;
         }
 
         .tags {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 0.8rem;
             flex-wrap: wrap;
-            margin-bottom: 2.8rem;
+            margin-bottom: 0;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
         }
 
         .tag {
@@ -394,6 +403,37 @@
 
         .tag.indian {
             color: #FFA500;
+        }
+
+        .pain-points {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 2.5rem;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .pain-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 51, 51, 0.05);
+            border: 1px solid rgba(255, 51, 51, 0.1);
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: #d1d5db;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--bearish-red);
+        }
+
+        .pain-item strong {
+            color: #fff;
+            margin: 0 4px;
+        }
+
+        .pain-icon {
+            margin-right: 12px;
+            color: var(--bearish-red);
         }
 
         .offer-box {
@@ -770,22 +810,39 @@
                         </svg>
                     </div>
                 </div>
-                <h1>Stock Ideas</h1>
-                <p class="subtitle">@stockideasbyshivam</p>
+                <div class="header-content">
+                    <h1>Stock Ideas</h1>
+                    <p class="subtitle">@stockideasbyshivam</p>
 
-                <div class="tags">
-                    <span class="tag crypto">BTC/USD</span>
-                    <span class="tag forex">XAU/USD</span>
-                    <span class="tag indian">NIFTY50</span>
+                    <div class="tags">
+                        <span class="tag crypto">BTC/USD</span>
+                        <span class="tag forex">XAU/USD</span>
+                        <span class="tag indian">NIFTY50</span>
+                    </div>
                 </div>
             </header>
+
+            <div class="pain-points">
+                <div class="pain-item">
+                    <span class="pain-icon">✕</span>
+                    <span>Market hits your <strong>Stop Loss</strong> first, then Target?</span>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">✕</span>
+                    <span>Is your <strong>Trailing SL</strong> always incorrect?</span>
+                </div>
+                <div class="pain-item">
+                    <span class="pain-icon">✕</span>
+                    <span>Tired of getting trapped in <strong>Fake Breakouts</strong>?</span>
+                </div>
+            </div>
 
             <div class="offer-box">
                 <div class="offer-title">
                     ⚠ Market Volatility Alert
                 </div>
                 <!-- Countdown -->
-                <div class="countdown" id="timer">14:59</div>
+                <div class="countdown js-timer">14:59</div>
                 <div class="countdown-label">Premium Access Closing</div>
             </div>
 
@@ -884,7 +941,7 @@
         <div style="text-align: center;">
             <p
                 style="color: #94a3b8; margin-bottom: 1.5rem; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
-                STRATEGY CLOSING IN <span style="color: var(--bearish-red);">15:00 MINS</span>
+                STRATEGY CLOSING IN <span class="js-timer" style="color: var(--bearish-red);">15:00 MINS</span>
             </p>
             <a href="https://t.me/stockideasbyshivam" target="_blank" class="cta-button"
                 style="background: var(--bearish-gradient); color: white;" aria-label="Get Access to Premium Group Now">
@@ -900,25 +957,28 @@
         /* =========================================
            COUNTDOWN TIMER LOGIC
            ========================================= */
-        let timeLeft = 15 * 60; // 15 minutes in seconds
-
-        const timerDisplay = document.getElementById('timer');
+        const timerDisplays = document.querySelectorAll('.js-timer');
 
         function updateTimer() {
-            const minutes = Math.floor(timeLeft / 60);
-            let seconds = timeLeft % 60;
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0); // Next midnight
 
-            // Add leading zeros
-            seconds = seconds < 10 ? '0' + seconds : seconds;
+            const diff = midnight - now; // Milliseconds remaining
 
-            timerDisplay.textContent = `${minutes}:${seconds}`;
+            // Calculate hours, minutes, seconds
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            if (timeLeft === 0) {
-                // When timer hits zero, maybe reset or stay at 00:00
-                timeLeft = 15 * 60; // Loop it for demo purposes, or handle expire logic
-            } else {
-                timeLeft--;
-            }
+            // Pad with leading zeros
+            const h = hours < 10 ? '0' + hours : hours;
+            const m = minutes < 10 ? '0' + minutes : minutes;
+            const s = seconds < 10 ? '0' + seconds : seconds;
+
+            timerDisplays.forEach(display => {
+                display.textContent = `${h}:${m}:${s}`;
+            });
         }
 
         // Initialize timer
